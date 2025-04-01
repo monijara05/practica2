@@ -4,41 +4,41 @@ import java.util.Scanner;
 /**
  * Clase Notas para gestionar el ingreso y el cálculo de las notas de los estudiantes.
  * 
- * @author MonicaJaramillo
+ * @author MonicaPaolaJaramilloDuran
  * @version 1.0
  * @since 01-04-2025
  */
 
 public class notas {
-	//declaramos la variables que nos hacen falta
+	//declaramos las variables que nos hacen falta
 	
 	/** Nota de la Unidad Formativa 1 */
-	double uf1;
+	double unidadFormativa1;
 	
 	/** Nota de la Unidad Formativa 2 */
-	double uf2;
+	double unidadFormativa2;
 	
 	/** Nota de la Unidad Formativa 3 */
-	double uf3;
+	double unidadFormativa3;
 	
 	/** Acumulado de la nota 1 */
-	double acu1;
+	double acumuladoNota1;
 	
 	/** Acumulado de la nota 2 */
-	double acu2;
+	double acumuladoNota2;
 	
 	/** Acumulado de la nota 3 */
-	double acu3;
+	double acumuladoNota3;
 	
 	/** Nota definitiva */
-	double def;
+	double notaDefinitiva;
 	
 	//utilizamos Scanner para poder introducir datos
 	
 	/** Objeto Scanner para la introducción de datos */
 	Scanner entrada = new Scanner(System.in);
 	
-	//vamos a crear un metodo para ingresar
+	//creamos un método para ingresar
 	
 	/**
      * Método para ingresar las notas del estudiante.
@@ -46,20 +46,20 @@ public class notas {
      */
 
 	public void ingresaNotas() {
-		//cuando ejeuctamos este metodo lo primnero que queremos es que nos pida notas
+		//cuando ejeuctamos este método lo primero que queremos es que nos pida notas
 		System.out.println("ingrese las notas del estudiante");
 		
 		System.out.print("ingrese nota 1: ");
-		uf1= entrada.nextDouble();
+		unidadFormativa1= entrada.nextDouble();
 
 		System.out.print("ingrese nota 2: ");
-		uf2= entrada.nextDouble();
+		unidadFormativa2= entrada.nextDouble();
 		
 		System.out.print("ingrese nota 3: ");
-		uf3= entrada.nextDouble();
+		unidadFormativa3= entrada.nextDouble();
 	}
 	
-	// metodo para comprobar bien introduccion de notas
+	// método para comprobar la correcta introducción de notas
 	
 	/**
      * Método para comprobar la correcta introducción de las notas.
@@ -68,37 +68,37 @@ public class notas {
 	
 	public void comprobacion(){
 		
-		if (uf1>10) {
+		if (unidadFormativa1>10) {
 			System.out.println(" nota1 mal introducida");
 		}else {
 			System.out.println(" nota1 correcta");
 		}
 		
-		if (uf2>10) {
+		if (unidadFormativa2>10) {
 			System.out.println(" nota2 mal introducida");
 		}else {
 			System.out.println(" nota2 correcta");
 		}
 		
-		if (uf3>10) {
+		if (unidadFormativa3>10) {
 			System.out.println(" nota3 mal introducida");
 		}else {
 			System.out.println(" nota3 correcta");
 		}
 	}
 	
-	// metodo para calcular nota
+	// método para calcular nota
 	
 	/**
      * Método para calcular la nota definitiva con base en los acumulados.
      */
 	
 	public void calculoNotas() {
-		acu1 = uf1 * 0.35;
-		acu2 = uf2 * 0.35;
-		acu3 = uf3 * 0.30;
+		acumuladoNota1 = unidadFormativa1 * 0.35;
+		acumuladoNota2 = unidadFormativa2 * 0.35;
+		acumuladoNota3 = unidadFormativa3 * 0.30;
 		
-		def = acu1 + acu2+ acu3;
+		notaDefinitiva = acumuladoNota1 + acumuladoNota2 + acumuladoNota3;
 		
 		//hasta aquí la tenemos calculada pero no la mostramos
 	}
@@ -108,17 +108,17 @@ public class notas {
      */
 	
 	public void mostrar() {
-		//print ln lo que hace es que al terminar el print baja la linea
+		
 		System.out.println(" notas introducidas son:");
-		System.out.println(" nota1 = " + uf1);
-		System.out.println(" nota2 = " + uf2);
-		System.out.println(" nota3 = " + uf3);
+		System.out.println(" nota1 = " + unidadFormativa1);
+		System.out.println(" nota2 = " + unidadFormativa2);
+		System.out.println(" nota3 = " + unidadFormativa3);
 		
-		System.out.println(" acumuado 1 = "+ acu1);
-		System.out.println(" acumuado 2 = "+ acu2);
-		System.out.println(" acumuado 3 = "+ acu3);
+		System.out.println(" acumuado 1 = "+ acumuladoNota1);
+		System.out.println(" acumuado 2 = "+ acumuladoNota2);
+		System.out.println(" acumuado 3 = "+ acumuladoNota3);
 		
-		System.out.println(" nota definitiva es = "+ def);
+		System.out.println(" nota definitiva es = "+ notaDefinitiva);
 	}
 	
 	/**
@@ -127,9 +127,9 @@ public class notas {
 
 	public void aprobado() {
 			
-			if(def<5 && def>=0) {
+			if(notaDefinitiva<5 && notaDefinitiva>=0) {
 				System.out.println("suspendio");
-			}else if (def>=5 && def<=10 ) {
+			}else if (notaDefinitiva>=5 && notaDefinitiva<=10 ) {
 				System.out.println("aprobado");
 			}else {
 					System.out.println(" error en la notas");
@@ -147,7 +147,7 @@ public class notas {
      */
 	
 	public static void main(String[] args) {
-		// creamos mecanimos para llamar a cualquier metodo fuera de la clase
+		// creamos mecanimos para llamar a cualquier método fuera de la clase
 		
 		notas fc= new notas();
 		
